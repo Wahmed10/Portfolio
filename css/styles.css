@@ -70,11 +70,13 @@ ul{list-style:none}
    NAVIGATION
    ======================================================== */
 .site-header{
-  position:sticky;top:0;z-index:100;
+  position:fixed;top:0;left:0;right:0;z-index:100;
   background:rgba(13,27,42,.88);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--clr-border);
 }
+/* Compensate for the fixed header height */
+main{padding-top:60px}
 .nav{
   max-width:var(--max-width);margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
@@ -394,8 +396,20 @@ ul{list-style:none}
     font-size:var(--fs-lg);
     padding:var(--sp-sm) var(--sp-md);
   }
-  /* Prevent body scroll when menu is open */
-  body.menu-open{overflow:hidden}
+  /* Prevent body scroll when menu is open (iOS-safe) */
+  html.menu-open,
+  body.menu-open{
+    overflow:hidden;
+    position:fixed;
+    width:100%;
+  }
+
+  /* Allow the menu panel itself to scroll if content overflows */
+  .nav__list{
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
+  }
 
   /* Hero stacks vertically, image on top */
   .hero{padding:var(--sp-xl) var(--sp-lg)}

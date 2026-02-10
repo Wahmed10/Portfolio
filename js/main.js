@@ -53,25 +53,62 @@
   window.addEventListener('scroll', highlightNav, { passive: true });
   highlightNav();   // run once on load
 
-  /* ── 3. Mobile hamburger toggle ──────────────────────── */
+  /* ── 3. Mobile hamburger toggle (iOS-safe scroll lock) ─ */
   const toggle = document.querySelector('.nav__toggle');
   const navList = document.querySelector('.nav__list');
+
+  let savedScrollY = 0;
+
+  // Touchmove guard: block background scroll while menu is open
+  function onTouchMove(e) {
+    // Allow scroll inside the menu panel itself
+    if (e.target.closest('.nav__list')) return;
+    e.preventDefault();
+  }
+
+  function openMenu() {
+    // Save current scroll position
+    savedScrollY = window.scrollY;
+
+    toggle.setAttribute('aria-expanded', 'true');
+    navList.classList.add('open');
+
+    // Lock scroll (body-fixed pattern for iOS Safari)
+    document.body.style.top = '-' + savedScrollY + 'px';
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+
+    // iOS rubber-band guard
+    document.addEventListener('touchmove', onTouchMove, { passive: false });
+  }
+
+  function closeMenu() {
+    toggle.setAttribute('aria-expanded', 'false');
+    navList.classList.remove('open');
+
+    // Unlock scroll and restore position
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+    document.body.style.top = '';
+    window.scrollTo(0, savedScrollY);
+
+    // Remove touchmove guard
+    document.removeEventListener('touchmove', onTouchMove);
+  }
 
   if (toggle && navList) {
     toggle.addEventListener('click', () => {
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      navList.classList.toggle('open');
-      document.body.classList.toggle('menu-open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
     // Close menu when a link is clicked
     navList.querySelectorAll('.nav__link').forEach((link) => {
-      link.addEventListener('click', () => {
-        toggle.setAttribute('aria-expanded', 'false');
-        navList.classList.remove('open');
-        document.body.classList.remove('menu-open');
-      });
+      link.addEventListener('click', () => closeMenu());
     });
   }
 })();
