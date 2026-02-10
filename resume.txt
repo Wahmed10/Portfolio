@@ -1,0 +1,41 @@
+Waqar Ahmed
+Quality Engineer
+waqar200028@gmail.com | 778-586-4209 | linkedin.com/in/wahmed2000 | Ottawa, ON
+
+Education:
+Bachelor of Applied Science, Electrical Engineering (Mechatronics Option with Distinction)
+University of British Columbia, Okanagan Campus | Sept 2018 – Jun 2023
+GPA: 3.7 | Dean’s list (2019 - 2023)
+
+Certifications:     
+ISTQB; Foundation Level (CTFL) (In Progress)
+POSTMAN; API Testing
+LAMBDATEST; Playwright 101
+
+Skills
+Quality Engineering & Testing: Test planning, regression testing, feature validation, risk-based testing, release readiness, Alpha/Beta testing, customer-facing validation
+Test Automation: Test automation scripting, automation framework contribution, regression automation, Linux command line, log analysis, SDLC,  mobile testing iOS and Android, device testing wired and wireless systems
+Defect Management & Agile Delivery: Jira defect tracking, prioritization and severity assessment, impact analysis, agile and sprint-based workflows, Confluence documentation
+Collaboration & Release Management: Cross-functional collaboration with Product, Software, and Hardware Engineering teams; quality sign-offs; stakeholder coordination, third party vendor collaboration
+Documentation & Knowledge Sharing: Test plans, test cases, test coverage documentation, onboarding documentation, mentoring and training
+Technical Tools: Playwright, Postman, Jira, Confluence, Linux, GIT, AWS, iOS, Android, Python, JavaScript, Typescript JQL, MATLAB, Arena (PLM)
+
+Professional Experience
+Quality Engineer - Alarm.com | Oct 2023 - Present
+Led end-to-end quality engineering for a 10-month customer-facing product launch, owning validation across Alpha, Beta, and Limited Availability phases for feature and firmware releases
+Designed and executed risk based test strategies, analyzing logs and tracking 100+ defects in Jira, prioritizing critical issues to ensure release readiness and product credibility
+Partnered closely with Product Management and Software Engineering to identify and escalate credibility blocking defects, directly influencing feature readiness and go no go release decisions
+Coordinated quality efforts across 3 QE teams, Device Engineering, Software Engineering, Beta, Business, Legal, and international partners, ensuring alignment on quality standards and timelines
+Built and maintained 200+ test cases and product documentation, improving test coverage and accelerating QE onboarding
+Software Test Engineer  - Arlo Technologies | Sept 2021 - Sept 2022
+Executed firmware, regression, and mobile testing across 7 product lines including sensors and wired and wireless video devices, using Linux log analysis, iOS, and Android validation to ensure feature stability
+Contributed to test automation repository by maintaining 5 automation scripts that reduced manual testing time by up to 90%
+Supported agile development by documenting and tracking defects using Jira and Confluence, collaborating closely with developers to resolve issues across firmware and mobile platforms, improving sprint efficiency
+Trained and mentored a new intern within a 5 person QE team, enabling full ramp up in under 2 months and ensuring continuity of testing coverage
+
+Projects
+Capstone Project - Interactive Smart Bin System
+Developed a smart bin system aimed at reducing sorting pressure and decreasing contamination in the campus waste stream
+Utilized Google vision API and a barcode API to develop a highly accurate waste classification model, achieving a balanced accuracy rate of 90%
+Programmed and integrated a diverse range of sensors and actuators, ensuring seamless connectivity and achieving a remarkable system wide delay of less than 5 seconds
+Recognized for exceptional outcomes, securing first place under the interdisciplinary project category
