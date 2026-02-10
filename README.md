@@ -64,13 +64,19 @@ All colours live in CSS custom properties at the top of `css/styles.css`:
 
 ```css
 :root {
-  --clr-accent:      #5eead4;   /* teal — change this */
-  --clr-accent-hover: #2dd4bf;
-  --clr-accent-glow: rgba(94,234,212,.12);
+  --clr-bg:          #0D1B2A;           /* Ink Black — page background */
+  --clr-surface:     #1B263B;           /* Prussian Blue — card backgrounds */
+  --clr-surface-alt: #22334d;           /* alternate card bg */
+  --clr-border:      #415A77;           /* Dusk Blue — borders */
+  --clr-text:        #E0E1DD;           /* Alabaster Grey — body text */
+  --clr-text-muted:  #778DA9;           /* Lavender Grey — secondary text */
+  --clr-accent:      #778DA9;           /* Lavender Grey — links, highlights */
+  --clr-accent-hover:#9aafc6;           /* accent on hover */
+  --clr-accent-glow: rgba(119,141,169,.14); /* glow/shadow */
 }
 ```
 
-Pick any hex colour and update those three values.
+Swap any of these values to re-theme the entire site.
 
 ## Deploy to GitHub Pages
 
