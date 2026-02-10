@@ -112,7 +112,8 @@ ul{list-style:none}
 /* Hamburger */
 .nav__toggle{
   display:none;background:none;border:none;cursor:pointer;
-  width:32px;height:24px;position:relative;z-index:110;
+  width:44px;height:44px;position:relative;z-index:1010;
+  padding:10px 6px;
 }
 .nav__hamburger,
 .nav__hamburger::before,
@@ -370,26 +371,42 @@ ul{list-style:none}
    ======================================================== */
 @media(max-width:768px){
   /* Nav → mobile drawer */
-  .nav__toggle{display:block}
+  .nav__toggle{display:flex;align-items:center;justify-content:center}
   .nav__list{
     position:fixed;inset:0;
+    z-index:1000;
     flex-direction:column;align-items:center;justify-content:center;
     gap:var(--sp-xl);
-    background:rgba(13,27,42,.97);
+    background:rgba(13,27,42,.98);
+    backdrop-filter:blur(16px);
     transform:translateX(100%);
     transition:transform var(--transition);
   }
   .nav__list.open{transform:translateX(0)}
-  .nav__link{font-size:var(--fs-md)}
+  .nav__link{
+    font-size:var(--fs-lg);
+    padding:var(--sp-sm) var(--sp-md);
+  }
+  /* Prevent body scroll when menu is open */
+  body.menu-open{overflow:hidden}
 
   /* Hero stacks vertically, image on top */
+  .hero{padding:var(--sp-xl) var(--sp-lg)}
   .hero__container{
     flex-direction:column-reverse;text-align:center;
-    gap:var(--sp-xl);
+    gap:var(--sp-lg);
   }
+  .hero__name{font-size:2.2rem}
+  .hero__title{font-size:1.4rem}
   .hero__cta{justify-content:center}
+  .hero__cta .btn{width:100%;justify-content:center}
   .hero__summary{margin-left:auto;margin-right:auto}
-  .hero__image img{width:200px;height:200px}
+  .hero__image img{width:180px;height:180px}
+
+  /* Sections */
+  .section{padding:var(--sp-xl) var(--sp-md)}
+  .card{padding:var(--sp-md) var(--sp-lg)}
+  .certs{padding:var(--sp-md) var(--sp-lg)}
 
   /* Cards */
   .card__header{flex-direction:column}

@@ -62,6 +62,7 @@
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!isOpen));
       navList.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
     });
 
     // Close menu when a link is clicked
@@ -69,6 +70,7 @@
       link.addEventListener('click', () => {
         toggle.setAttribute('aria-expanded', 'false');
         navList.classList.remove('open');
+        document.body.classList.remove('menu-open');
       });
     });
   }
